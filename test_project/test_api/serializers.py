@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from test_api.models import User, UserProfile
 
+# Here define serializer view for custom UserProfile model
 
 class UserProfileSerializer(serializers.ModelSerializer):
     
@@ -8,6 +9,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = UserProfile
         fields = ('country', 'city',)
 
+
+""" Userserializer for serialized both "User" model and "UserProfile".
+   Create view used to create new instance of user and 
+   update view used to update existing user detail by mension /{user-id}
+   in endpoint of API """
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     profile = UserProfileSerializer(required=True)

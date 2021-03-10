@@ -20,6 +20,6 @@ import test_api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('test_api.urls')),
+    path('api/', include('test_api.urls')),  #test_api views and API urls 
 
 ]
